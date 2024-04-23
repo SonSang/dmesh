@@ -1,0 +1,47 @@
+mesh: dataset/deepfashion3d/448_mesh.ply
+log_dir: exp_result/exp_2/deepfashion3d/448
+device: 'cuda:0'
+
+args:
+  lr: 1e-4
+  lr_schedule: constant # linear, constant, exp
+  update_bound: 1e-4
+
+  iwdt_sigmoid_k: 1000
+  max_real: 3e-3
+  refine_ud_thresh: 1e-4
+
+  weight_regularizer_coef: 1e-8
+  quality_regularizer_coef: 1e-3
+
+  num_target_sample_points: 1e5
+  num_recon_sample_points: 1e5
+  recon_normal_loss_weight: 0
+
+  use_weight: true
+  
+  init_args:
+    method: sample
+    num_sample_points: 1e4
+    grid_res: 10
+
+  # ===== These terms are applied only for the first part of optim 0 
+  # real regularization;
+  max_real_regularizer_coef: 0.001            
+  min_real_regularizer_coef: 0.001            
+  real_regularizer_step: 100                # first N steps;
+  # =====
+
+  num_epochs: 1
+
+  num_phase_0_steps: 1000
+  num_phase_0_real_warmup_steps: 10000    # no freeze
+  num_phase_0_real_freeze_steps: 10000
+
+  num_phase_1_steps: 500
+  num_phase_1_real_warmup_steps: 0
+  num_phase_1_real_freeze_steps: 250
+
+  save_steps: 50
+
+  epoch_args:

@@ -1,0 +1,9 @@
+mesh: dataset/stanford/dragon/dragon_vrip_res4.ply
+log_dir: exp_result/exp_1/dragon
+device: 'cuda:0'
+
+args:
+  num_step: 20000
+  save_step: 100
+  refresh_points_step: 2000
+  gt_max_perturb: 1e-2

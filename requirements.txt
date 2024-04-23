@@ -1,0 +1,10 @@
+fast-pytorch-kmeans==0.2.0.1
+libigl==2.5.0
+scipy==1.12.0
+six==1.16.0
+tensorboard==2.16.2
+tensorboard-data-server==0.7.2
+trimesh==4.2.0
+ninja
+imageio
+imageio-ffmpeg

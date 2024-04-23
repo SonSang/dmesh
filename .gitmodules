@@ -1,0 +1,12 @@
+[submodule "external/cgal"]
+	path = external/cgal
+	url = https://github.com/CGAL/cgal.git
+[submodule "external/oneTBB"]
+	path = external/oneTBB
+	url = https://github.com/oneapi-src/oneTBB
+[submodule "external/nvdiffrast"]
+	path = external/nvdiffrast
+	url = https://github.com/NVlabs/nvdiffrast.git
+[submodule "external/dmesh_renderer"]
+	path = external/dmesh_renderer
+	url = https://github.com/SonSang/dmesh_renderer.git

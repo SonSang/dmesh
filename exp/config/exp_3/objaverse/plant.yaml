@@ -1,0 +1,78 @@
+mesh: dataset/objaverse/plant.obj
+log_dir: exp_result/exp_3/objaverse/plant
+device: 'cuda:0'
+
+args:
+
+  # rendering;
+  num_viewpoints: 8 # 16 * 16 = 256
+  image_size: 256
+  batch_size: 16
+
+  # alpha thresh;
+  alpha_thresh: 1e-3
+  min_alpha_thresh: 1e-3
+  max_alpha_thresh: 1e-1
+
+  # use depth;
+  use_depth: true
+  depth_coef: 1.0
+
+  use_weight: true
+
+  # args for init;
+  init_args:
+    method: random    # "random", "sample", "load"
+    num_sample_points: 1e4
+    grid_res: 20
+    load_path: ""
+
+  # common default args for epochs;
+  lr: 3e-4
+  lr_schedule: constant # linear, constant, exp
+  update_bound: 3e-4
+
+  weight_regularizer_coef: 1e-8
+  quality_regularizer_coef: 1e-3
+
+  iwdt_sigmoid_k: 1000
+  max_real: 3e-3
+  refine_ud_thresh: 1e-4
+
+  # ===== These terms are applied only for the first part of optim 0 
+  # real regularization;
+  max_real_regularizer_coef: 0.01            
+  min_real_regularizer_coef: 0.001            
+  real_regularizer_step: 100                # first N steps;
+  # =====
+
+  num_epochs: 4
+
+  num_phase_0_steps: 500
+  num_phase_0_real_warmup_steps: 10000
+  num_phase_0_real_freeze_steps: 10000
+
+  num_phase_1_steps: 500
+  num_phase_1_real_warmup_steps: 0
+  num_phase_1_real_freeze_steps: 250
+
+  save_steps: 50
+
+  epoch_args:
+
+    epoch_0:
+
+      lr: 1e-3
+      lr_schedule: constant
+      update_bound: 1e-3
+
+      num_phase_0_steps: 500
+
+    epoch_1:
+      refine: 1000
+
+    epoch_2:
+      refine: 3000
+
+    epoch_3:
+      refine: 10000

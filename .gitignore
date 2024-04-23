@@ -1,0 +1,18 @@
+# CMake generated files
+CMakeFiles/
+*.cmake
+CMakeCache.txt
+*.a
+Makefile
+
+# Build
+build/
+*.so
+*.egg-info
+__pycache__/
+*.pyc
+
+# Etc.
+dataset/
+exp_result/
+.vscode/
