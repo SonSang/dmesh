@@ -6,7 +6,7 @@ By computing existence probability for faces in a mesh, DMesh offers a way to re
 
 ## Installation
 
-Please clone this repository recursively to include all submodules.
+(This guide is mainly written for Ubuntu environment. Please see [here](https://github.com/SonSang/dmesh/issues/3) to install our project in Windows environment.) Please clone this repository recursively to include all submodules.
 
 ```bash
 git clone https://github.com/SonSang/dmesh.git --recursive
