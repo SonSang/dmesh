@@ -1,4 +1,4 @@
-# DMesh: A Differentiable Representation for General Meshes
+# DMesh: A Differentiable Representation for General Meshes (NeurIPS 2024)
 
 By computing existence probability for faces in a mesh, DMesh offers a way to represent a general triangular mesh in a differentiable manner. Please refer to our [arxiv](https://arxiv.org/abs/2404.13445), [full paper](https://www.cs.umd.edu/~shh1295/dmesh/full2.pdf), and [project website](https://sonsang.github.io/dmesh-project) for more details.
 
